@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     private float jumpPower = 400;
     private bool goJump = false;
     private bool canJump = false;
+    private bool usingButtons = false;
 
     public enum MOVE_DIR
     {
@@ -41,6 +42,32 @@ public class PlayerManager : MonoBehaviour
                 transform.position + (transform.right * 0.3f),
                 transform.position - (transform.up * 0.1f),
                 blockLayer);
+
+        if (!usingButtons)
+        {
+            float x = Input.GetAxisRaw("Horizontal");
+
+            if (x == 0)
+            {
+                moveDirection = MOVE_DIR.STOP;
+            }
+            else
+            {
+                if (x < 0)
+                {
+                    moveDirection = MOVE_DIR.LEFT;
+                }
+                else
+                {
+                    moveDirection = MOVE_DIR.RIGHT;
+                }
+            }
+
+            if (Input.GetKeyDown("space"))
+            {
+                PushJumpButton();
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -74,16 +101,19 @@ public class PlayerManager : MonoBehaviour
     public void PushLeftButton()
     {
         moveDirection = MOVE_DIR.LEFT;
+        usingButtons = true;
     }
 
     public void PushRightButton()
     {
         moveDirection = MOVE_DIR.RIGHT;
+        usingButtons = true;
     }
 
     public void ReleaseMoveButton()
     {
         moveDirection = MOVE_DIR.STOP;
+        usingButtons = false;
     }
 
     public void PushJumpButton()
