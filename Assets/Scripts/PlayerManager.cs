@@ -102,10 +102,20 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (gameManager.GetComponent<GameManager>().gameMode != GameManager.GAME_MODE.PLAY)
+        {
+            return;
+        }
+
         if (collision.gameObject.tag == "Trap")
         {
             gameManager.GetComponent<GameManager>().GameOver();
             DestroyPlayer();
+        }
+
+        if (collision.gameObject.tag == "Goal")
+        {
+            gameManager.GetComponent<GameManager>().GameClear();
         }
     }
 
