@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     {
         PLAY,
         CLEAR,
+        GAMEOVER,
     };
     public GAME_MODE gameMode = GAME_MODE.PLAY;
 

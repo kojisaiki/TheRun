@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using DG.Tweening;
+
 public class PlayerManager : MonoBehaviour
 {
     public GameObject gameManager;
@@ -9,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     public LayerMask blockLayer;
 
     private Rigidbody2D rbody;
+    private Animator animator;
 
     private const float MOVE_SPEED = 3;
     private float moveSpeed;
@@ -30,6 +33,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,6 +48,8 @@ public class PlayerManager : MonoBehaviour
                 transform.position + (transform.right * 0.3f),
                 transform.position - (transform.up * 0.1f),
                 blockLayer);
+
+        animator.SetBool("onGround", canJump);
 
         if (!usingButtons)
         {
@@ -164,6 +170,15 @@ public class PlayerManager : MonoBehaviour
 
     private void DestroyPlayer()
     {
-        Destroy(this.gameObject);
+        gameManager.GetComponent<GameManager>().gameMode = GameManager.GAME_MODE.GAMEOVER;
+
+        Destroy(GetComponent<CircleCollider2D>());
+        Destroy(GetComponent<BoxCollider2D>());
+
+        Sequence animSet = DOTween.Sequence();
+        animSet.Append(transform.DOLocalMoveY(1.0f, 0.2f).SetRelative());
+        animSet.Append(transform.DOLocalMoveY(-10.0f, 1.0f).SetRelative());
+
+        Destroy(this.gameObject, 1.2f);
     }
 }
