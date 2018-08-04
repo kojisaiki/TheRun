@@ -29,11 +29,19 @@ public class PlayerManager : MonoBehaviour
 
     private MOVE_DIR moveDirection = MOVE_DIR.STOP;
 
+    public AudioClip jumpSE;
+    public AudioClip getSE;
+    public AudioClip stampSE;
+
+    private AudioSource audioSource;
+
     // Use this for initialization
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        audioSource = gameManager.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -101,6 +109,7 @@ public class PlayerManager : MonoBehaviour
 
         if (goJump)
         {
+            audioSource.PlayOneShot(jumpSE);
             rbody.AddForce(Vector2.up * jumpPower);
             goJump = false;
         }
@@ -126,6 +135,7 @@ public class PlayerManager : MonoBehaviour
         {
             if (transform.position.y > collision.gameObject.transform.position.y + 0.4f)
             {
+                audioSource.PlayOneShot(stampSE);
                 rbody.velocity = new Vector2(rbody.velocity.x, 0);
                 rbody.AddForce(Vector2.up * jumpPower);
                 collision.gameObject.GetComponent<EnemyManager>().DestroyEnemy();
@@ -138,6 +148,7 @@ public class PlayerManager : MonoBehaviour
         }
         if (collision.gameObject.tag == "Orb")
         {
+            audioSource.PlayOneShot(getSE);
             collision.gameObject.GetComponent<OrbManager>().GetOrb();
         }
     }

@@ -3260,6 +3260,9 @@ MonoBehaviour:
   blockLayer:
     serializedVersion: 2
     m_Bits: 256
+  jumpSE: {fileID: 8300000, guid: c9db7b722491b42609d11a65e4fe453b, type: 3}
+  getSE: {fileID: 8300000, guid: 1e717eda294bf42baaa8edcf47051e69, type: 3}
+  stampSE: {fileID: 8300000, guid: ba482836da8d14649a09ac9b3e5f0905, type: 3}
 --- !u!95 &1566037338
 Animator:
   serializedVersion: 3
