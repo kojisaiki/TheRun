@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212127897676485296}
   - component: {fileID: 58700065955270068}
   - component: {fileID: 114725772684991008}
+  - component: {fileID: 95252977310585346}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Orb
@@ -57,6 +58,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
+--- !u!95 &95252977310585346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1153397869351672}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 23cf1b2628dfb481f8bdaa0ad2ecae06, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114725772684991008
 MonoBehaviour:
   m_ObjectHideFlags: 1
