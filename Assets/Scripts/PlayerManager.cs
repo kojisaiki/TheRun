@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameObject gameManager;
+
     public LayerMask blockLayer;
 
     private Rigidbody2D rbody;
@@ -98,6 +100,15 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Trap")
+        {
+            gameManager.GetComponent<GameManager>().GameOver();
+            DestroyPlayer();
+        }
+    }
+
     public void PushLeftButton()
     {
         moveDirection = MOVE_DIR.LEFT;
@@ -122,5 +133,10 @@ public class PlayerManager : MonoBehaviour
         {
             goJump = true;
         }
+    }
+
+    private void DestroyPlayer()
+    {
+        Destroy(this.gameObject);
     }
 }
