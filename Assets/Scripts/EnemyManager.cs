@@ -66,4 +66,9 @@ public class EnemyManager : MonoBehaviour
                 break;
         }
     }
+
+    public void DestroyEnemy()
+    {
+        Destroy(this.gameObject);
+    }
 }

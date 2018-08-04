@@ -112,10 +112,23 @@ public class PlayerManager : MonoBehaviour
             gameManager.GetComponent<GameManager>().GameOver();
             DestroyPlayer();
         }
-
         if (collision.gameObject.tag == "Goal")
         {
             gameManager.GetComponent<GameManager>().GameClear();
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            if (transform.position.y > collision.gameObject.transform.position.y + 0.4f)
+            {
+                rbody.velocity = new Vector2(rbody.velocity.x, 0);
+                rbody.AddForce(Vector2.up * jumpPower);
+                collision.gameObject.GetComponent<EnemyManager>().DestroyEnemy();
+            }
+            else
+            {
+                gameManager.GetComponent<GameManager>().GameOver();
+                DestroyPlayer();
+            }
         }
     }
 
