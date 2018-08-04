@@ -130,6 +130,10 @@ public class PlayerManager : MonoBehaviour
                 DestroyPlayer();
             }
         }
+        if (collision.gameObject.tag == "Orb")
+        {
+            collision.gameObject.GetComponent<OrbManager>().GetOrb();
+        }
     }
 
     public void PushLeftButton()
