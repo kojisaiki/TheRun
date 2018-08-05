@@ -130,7 +130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &221181983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -597,7 +597,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57ee5b527a794d83b571fdd60ca1401, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageButtons: []
+  stageButtons:
+  - {fileID: 275167198}
+  - {fileID: 533864318}
+  - {fileID: 2063974287}
 --- !u!1 &599032811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1642728780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1513,7 +1516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2018451059
 RectTransform:
   m_ObjectHideFlags: 0

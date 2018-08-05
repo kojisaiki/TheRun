@@ -3184,6 +3184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39bbe07e09594c17ba97e3c67c18c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageNo: 3
   textGameOver: {fileID: 1153797485}
   textClear: {fileID: 1227744354}
   buttons: {fileID: 37733938}

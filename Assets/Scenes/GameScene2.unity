@@ -5986,6 +5986,7 @@ Transform:
   - {fileID: 399660692}
   - {fileID: 458815455}
   - {fileID: 1359740226}
+  - {fileID: 1800395297}
   - {fileID: 205113579}
   - {fileID: 430093443}
   - {fileID: 1259352376}
@@ -5998,27 +5999,24 @@ Transform:
   - {fileID: 1002855622}
   - {fileID: 1958481281}
   - {fileID: 129800684}
-  - {fileID: 1800395297}
-  - {fileID: 1732285350}
-  - {fileID: 2022123608}
   - {fileID: 351931146}
-  - {fileID: 691252282}
+  - {fileID: 1732285350}
   - {fileID: 37933195}
   - {fileID: 203932949}
+  - {fileID: 691252282}
   - {fileID: 919301426}
   - {fileID: 555772279}
   - {fileID: 1131945262}
   - {fileID: 1103159471}
   - {fileID: 2010911760}
   - {fileID: 671696483}
+  - {fileID: 2022123608}
   - {fileID: 155283317}
   - {fileID: 1110343819}
   - {fileID: 1697076658}
   - {fileID: 346466800}
   - {fileID: 398164985}
   - {fileID: 177583977}
-  - {fileID: 1619148373}
-  - {fileID: 1672218199}
   - {fileID: 335623765}
   - {fileID: 876333253}
   - {fileID: 887552383}
@@ -6033,11 +6031,12 @@ Transform:
   - {fileID: 635227643}
   - {fileID: 1948938616}
   - {fileID: 2037569455}
+  - {fileID: 1619148373}
   - {fileID: 712117211}
   - {fileID: 239857038}
+  - {fileID: 1672218199}
   - {fileID: 82912396}
   - {fileID: 1661340337}
-  - {fileID: 1925892853}
   - {fileID: 1438380386}
   - {fileID: 1481112298}
   - {fileID: 448885663}
@@ -6054,6 +6053,7 @@ Transform:
   - {fileID: 1124115331}
   - {fileID: 1986149456}
   - {fileID: 1186022923}
+  - {fileID: 1925892853}
   - {fileID: 35189264}
   - {fileID: 505773640}
   - {fileID: 1827373315}
@@ -6147,6 +6147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d39bbe07e09594c17ba97e3c67c18c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageNo: 2
   textGameOver: {fileID: 1153797485}
   textClear: {fileID: 1227744354}
   buttons: {fileID: 37733938}
@@ -6888,7 +6889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1588511171}
-  m_RootOrder: 51
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1800395298
 SpriteRenderer:

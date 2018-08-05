@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     private const int MAX_SCORE = 999999;
+
+    public int stageNo;
 
     public GameObject textGameOver;
     public GameObject textClear;
@@ -69,6 +72,8 @@ public class GameManager : MonoBehaviour
         audioSource.PlayOneShot(gameoverSE);
         textGameOver.SetActive(true);
         buttons.SetActive(false);
+
+        Invoke("GoBackStageSelect", 2.0f);
     }
 
     public void GameClear()
@@ -77,5 +82,16 @@ public class GameManager : MonoBehaviour
         gameMode = GAME_MODE.CLEAR;
         textClear.SetActive(true);
         buttons.SetActive(false);
+
+        if (PlayerPrefs.GetInt("CLEAR", 0) < stageNo)
+        {
+            PlayerPrefs.SetInt("CLEAR", stageNo);
+        }
+        Invoke("GoBackStageSelect", 2.0f);
+    }
+
+    void GoBackStageSelect()
+    {
+        SceneManager.LoadScene("StageSelectScene");
     }
 }
