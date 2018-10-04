@@ -47,8 +47,11 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.up is the vector have up direction (positive direction in Y axis) with 1 unit scale.
-        // transform.right is the vector have right direction (positive direction in Y axis) with 1 unit scale.
+        // transform.up is instance of Vector3(0f, 1f, 0f).
+        // transform.right is instance of Vector3(1f, 0f, 0f).
+        // Sources:
+        // - https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Transform/ScriptBindings/Transform.bindings.cs
+        // - https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Vector3.cs
         canJump =
             Physics2D.Linecast(
                 transform.position - (transform.right * 0.3f),
