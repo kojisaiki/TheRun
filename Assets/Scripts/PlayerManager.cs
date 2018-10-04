@@ -47,6 +47,8 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // transform.up is the vector have up direction (positive direction in Y axis) with 1 unit scale.
+        // transform.right is the vector have right direction (positive direction in Y axis) with 1 unit scale.
         canJump =
             Physics2D.Linecast(
                 transform.position - (transform.right * 0.3f),
