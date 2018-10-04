@@ -47,8 +47,8 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.up is instance of Vector3(0f, 1f, 0f).
-        // transform.right is instance of Vector3(1f, 0f, 0f).
+        // transform.up is the instance of Vector3(0f, 1f, 0f).
+        // transform.right is the instance of Vector3(1f, 0f, 0f).
         // Sources:
         // - https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Transform/ScriptBindings/Transform.bindings.cs
         // - https://github.com/Unity-Technologies/UnityCsReference/blob/master/Runtime/Export/Vector3.cs
